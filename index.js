@@ -60,7 +60,7 @@ function hoursWorkedOnDate (time){
     return (outEvent.hour - inEvent.hour) / 100
 }
 function wagesEarnedOnDate(time){
-  return parseFloat((hoursWorkedOnDate(this,time)*this.payPerHour).toString())
+  return parseFloat((hoursWorkedOnDate.call(this,time)*this.payPerHour).toString())
 }
 
 function calculatePayroll(employeeRecords){
