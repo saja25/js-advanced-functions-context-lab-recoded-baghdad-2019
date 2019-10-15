@@ -42,13 +42,13 @@ function createTimeInEvent(dateStamp){
      }) 
      return this
 }
-function createTimeOutEvent(employeeRecord,dateStamp){
+function createTimeOutEvent(dateStamp){
      let [date, hour] = dateStamp.split(' ');
-     employeeRecord.timeOutEvents.push({
+     this.timeOutEvents.push({
        type: "TimeOut",
        hour:parseInt(hour,10),date
      }) 
-     return employeeRecord
+     return this
 }
 function hoursWorkedOnDate (employeeRecord,time){
     let inEvent = employeeRecord.timeInEvents.find(function(e){
