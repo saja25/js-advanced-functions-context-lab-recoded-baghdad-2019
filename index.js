@@ -59,8 +59,8 @@ function hoursWorkedOnDate (time){
     })
     return (outEvent.hour - inEvent.hour) / 100
 }
-function wagesEarnedOnDate(employeeRecord,time){
-  return parseFloat((hoursWorkedOnDate(employeeRecord,time)*employeeRecord.payPerHour).toString())
+function wagesEarnedOnDate(time){
+  return parseFloat((hoursWorkedOnDate(this,time)*this.payPerHour).toString())
 }
 function allWagesFor(employeeRecord){
   let time=employeeRecord.timeInEvents.map(e=>e.date);
