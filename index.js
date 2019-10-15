@@ -62,8 +62,8 @@ function hoursWorkedOnDate (time){
 function wagesEarnedOnDate(time){
   return parseFloat((hoursWorkedOnDate(this,time)*this.payPerHour).toString())
 }
-function allWagesFor(employeeRecord){
-  let time=employeeRecord.timeInEvents.map(e=>e.date);
+function allWagesFor(){
+  let time=this.timeInEvents.map(e=>e.date);
   return time.reduce(function(a,c){
     return a+wagesEarnedOnDate(employeeRecord,c)
   },0)
