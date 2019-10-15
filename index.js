@@ -50,11 +50,11 @@ function createTimeOutEvent(dateStamp){
      }) 
      return this
 }
-function hoursWorkedOnDate (employeeRecord,time){
-    let inEvent = employeeRecord.timeInEvents.find(function(e){
+function hoursWorkedOnDate (time){
+    let inEvent = this.timeInEvents.find(function(e){
         return e.date === time
     })
-    let outEvent = employeeRecord.timeOutEvents.find(function(e){
+    let outEvent = this.timeOutEvents.find(function(e){
         return e.date === time
     })
     return (outEvent.hour - inEvent.hour) / 100
